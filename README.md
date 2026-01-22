@@ -25,7 +25,7 @@ Faciliter la gestion des locations de véhicules (clients, chauffeurs, voitures)
 👉 https://anicetgit.github.io/carent-dashboard/
 
 ## 📸 Aperçu
-_(ajouter une capture d’écran plus tard)_
+![Aperçu du site](images/screenshot.png)
 
 ## 🚀 Installation locale
 ```bash
