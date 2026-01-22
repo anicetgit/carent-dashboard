@@ -22,14 +22,14 @@ Faciliter la gestion des locations de véhicules (clients, chauffeurs, voitures)
 - Git & GitHub
 
 ## 🌍 Démo en ligne
-👉 https://TON-USERNAME.github.io/carent-dashboard/
+👉 https://anicetgit.github.io/carent-dashboard/
 
 ## 📸 Aperçu
 _(ajouter une capture d’écran plus tard)_
 
 ## 🚀 Installation locale
 ```bash
-git clone https://github.com/TON-USERNAME/carent-dashboard.git
+git clone https://github.com/anicetgit/carent-dashboard.git
 cd carent-dashboard
 ouvrir dashboard.html
 
