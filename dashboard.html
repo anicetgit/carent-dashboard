@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <title>Dashboard – Car Rental</title>
+    <link rel="stylesheet" href="style.css">
+    <!-- Font Awesome pour les icônes -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" integrity="sha512-..." crossorigin="anonymous" referrerpolicy="no-referrer" />
+</head>
+<body>
+
+<!-- Hamburger mobile -->
+<button class="hamburger-btn">☰ Menu</button>
+
+<div class="dashboard">
+
+    <aside class="sidebar">
+        <h2>Car Rental</h2>
+        <ul>
+            <li><i class="fas fa-chart-line"></i> Dashboard</li>
+            <li><i class="fas fa-car"></i> Voitures</li>
+            <li><i class="fas fa-user"></i> Clients</li>
+            <li><i class="fa-solid fa-user-tie"></i> Chauffeurs</li>
+            <li><i class="fas fa-file-alt"></i> Locations</li>
+            <li class="logout"><i class="fas fa-sign-out-alt"></i> Déconnexion</li>
+        </ul>
+    </aside>
+
+    <main class="main">
+        <h1>Tableau de bord</h1>
+
+        <div class="cards">
+            <div class="card"><i class="fas fa-car fa-2x"></i><br>Voitures<br><strong id="carsCount">0</strong></div>
+            <div class="card"><i class="fas fa-user fa-2x"></i><br>Clients<br><strong id="clientsCount">0</strong></div>
+            <div class="card"><i class="fas fa-file-alt fa-2x"></i><br>Locations<br><strong id="locationsCount">0</strong></div>
+            <div class="card"><i class="fa-solid fa-user-tie"></i><br>Chauffeurs<br><strong id="driversCount">0</strong></div>
+        </div>
+
+        <button id="openModal" class="add-btn"><i class="fas fa-plus"></i> Nouvelle location</button>
+
+        <h2>Dernières locations</h2>
+        <input type="text" id="searchInput" placeholder="Rechercher client, voiture ou chauffeur..." class="search-input">
+        <button id="deleteAllBtn" class="delete-all-btn">Supprimer tout</button>
+        <table>
+            <thead>
+                <tr>
+                    <th>Client</th>
+                    <th>Voiture</th>
+                    <th>Chauffeur</th>
+                    <th>Date</th>
+                </tr>
+            </thead>
+            <tbody id="locationTable"></tbody>
+        </table>
+
+    </main>
+
+</div>
+
+<!-- Modal nouvelle location -->
+<div id="locationModal" class="modal">
+    <div class="modal-content">
+        <span class="close">&times;</span>
+        <h2>Nouvelle location</h2>
+
+        <form id="locationForm">
+
+            <!-- ================= CLIENT ================= -->
+            <div class="form-section">
+                <h3>Client</h3>
+                <input type="text" id="client" placeholder="Nom du client" required>
+                <input type="text" id="passport" placeholder="Passeport / CNI" required>
+            </div>
+
+            <!-- ================= VOITURE ================= -->
+            <div class="form-section">
+                <h3>Voiture</h3>
+                <input type="text" id="car" placeholder="Modèle du véhicule" required>
+                <input type="text" id="plate" placeholder="Plaque d'immatriculation" required>
+            </div>
+
+            <!-- ================= CHAUFFEUR ================= -->
+            <div class="form-section">
+                <h3>Chauffeur</h3>
+                <input type="text" id="driver" placeholder="Nom du chauffeur" required>
+                <input type="text" id="license" placeholder="Numéro de permis" required>
+            </div>
+
+            <!-- ================= DATE ================= -->
+            <div class="form-section">
+                <h3>Date</h3>
+                <input type="date" id="date" required>
+            </div>
+
+            <button type="submit">Enregistrer la location</button>
+        </form>
+    </div>
+</div>
+
+
+<script src="dashboard.js"></script>
+</body>
+</html>
+
+
+

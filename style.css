@@ -1,0 +1,442 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    
+}
+
+body {
+    background: #f4f6f9;
+}
+
+/* Hamburger mobile */
+.hamburger {
+    display: none;
+    font-size: 28px;
+    position: fixed;
+    top: 15px;
+    left: 15px;
+    padding: 10px 15px;
+    background: #0d6efd;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    z-index: 1100;
+}
+
+/* Dashboard */
+.dashboard {
+    display: flex;
+    min-height: 100vh;
+    width: 100%;
+}
+
+/* Sidebar */
+.sidebar {
+    width: 220px;
+    background: #0d6efd;
+    color: white;
+    padding: 20px;
+    transition: left 0.3s;
+    position: relative;
+}
+
+.sidebar h2 {
+    margin-bottom: 20px;
+}
+
+.sidebar ul {
+    list-style: none;
+}
+
+.sidebar li {
+    padding: 12px 10px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    border-radius: 5px;
+    transition: background 0.2s;
+}
+
+.sidebar li:hover {
+    background: rgba(255,255,255,0.2);
+}
+
+.logout {
+    margin-top: 30px;
+    color: #ffdddd;
+}
+
+/* Main */
+/* Import d'une police moderne depuis Google Fonts */
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap');
+
+body, .dashboard, .main, .sidebar, table, .cards, .card, input, button {
+    font-family: 'Roboto', sans-serif;
+}
+
+.main h1, 
+.main h2 {
+    font-family: 'Roboto', sans-serif; /* nouvelle police élégante */
+    font-weight: 700; /* plus gras */
+    color: #0d6efd; /* bleu pour ressortir */
+    margin-bottom: 20px;
+    letter-spacing: 1px; /* léger espacement entre lettres */
+}
+
+/* Optionnel : ligne décorative sous le titre */
+.main h1::after,
+.main h2::after {
+    content: '';
+    display: block;
+    width: 60px;
+    height: 3px;
+    background: #0d6efd;
+    margin-top: 5px;
+    border-radius: 2px;
+}
+.main {
+    flex: 1;
+    padding: 30px;
+}
+
+/* Cards */
+.cards {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+    gap: 15px;
+    margin-bottom: 30px;
+}
+
+.card {
+    background: white;
+    padding: 20px;
+    border-radius: 10px;
+    font-size: 16px;
+    text-align: center;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.card i {
+    font-size: 28px;
+    color: white;
+    margin-bottom: 10px;
+}
+
+.card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 25px rgba(0,0,0,0.15);
+}
+
+/* Couleurs individuelles */
+.card:nth-child(1) { background: #0d6efd; }   /* Voitures - bleu */
+.card:nth-child(2) { background: #0bbd6a; }   /* Clients - vert */
+.card:nth-child(3) { background: #f79e2a; color: #333; } /* Locations - jaune */
+.card:nth-child(4) { background: #ce57f1; }   /* Chauffeurs - rouge */
+
+/* Table */
+table {
+    width: 100%;
+    background: white;
+    border-collapse: collapse;
+    border-radius: 8px;
+    overflow: hidden;
+    text-align: center
+}
+
+th, td {
+    padding: 12px;
+    border-bottom: 1px solid #ddd;
+    vertical-align: middle;
+}
+
+th {
+    background: #e9ecef;
+}
+
+tbody tr:hover {
+    background: #f1f5ff;
+}
+
+/* Modal */
+.modal {
+    display: none;
+    position: fixed;
+    inset: 0;
+    background: rgba(0,0,0,0.6);
+    z-index: 1000;
+}
+
+.modal-content {
+    background: white;
+    width: 400px;
+    margin: 8% auto;
+    padding: 25px;
+    border-radius: 10px;
+    max-height: 80vh;          /* Le modal ne dépasse jamais l’écran */
+    overflow-y: auto;
+}
+
+.modal-content input,
+.modal-content button {
+    width: 100%;
+    padding: 12px;
+    margin-bottom: 10px;
+    border-radius: 5px;
+    font-size: 14px;
+}
+
+.modal-content button {
+    background: #198754;
+    color: white;
+    border: none;
+    cursor: pointer;
+}
+
+.modal-content button:hover {
+    background: #157347;
+}
+
+/* Sections du formulaire */
+.form-section {
+    border: 1px solid #e5e7eb;
+    padding: 15px;
+    border-radius: 8px;
+    margin-bottom: 15px;
+    background: #f9fafb;
+}
+
+/* Titre de section */
+.form-section h3 {
+    margin: 0 0 12px;
+    font-size: 14px;
+    font-weight: 600;
+    color: #0d6efd;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+
+/* Inputs plus élégants */
+.modal-content input {
+    border: 1px solid #d1d5db;
+    outline: none;
+    transition: border 0.2s, box-shadow 0.2s;
+}
+
+.modal-content input:focus {
+    border-color: #0d6efd;
+    box-shadow: 0 0 0 2px rgba(13,110,253,0.15);
+}
+
+/* Bouton principal */
+.modal-content button {
+    margin-top: 10px;
+    font-weight: 600;
+    letter-spacing: 0.3px;
+}
+
+/* Responsive */
+@media (max-width: 480px) {
+    .modal-content {
+        width: 90%;
+        margin: 15% auto;
+    }
+}
+/** scroll bar */
+.modal-content::-webkit-scrollbar {
+    width: 6px;
+}
+
+.modal-content::-webkit-scrollbar-thumb {
+    background: #cbd5e1;
+    border-radius: 10px;
+}
+
+.modal-content::-webkit-scrollbar-thumb:hover {
+    background: #94a3b8;
+}
+
+
+/* fin modal*/
+
+
+/* Bouton ajouter location */
+.add-btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px; /* espace entre icône et texte */
+    padding: 12px 20px;
+    background: linear-gradient(135deg, #0d6efd, #0b5ed7);
+    color: white;
+    border: none;
+    border-radius: 5px;
+    margin-bottom: 20px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.add-btn i {
+    font-size: 16px;
+}
+
+.add-btn:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+}
+
+/* filtrage */
+/* Highlight pour le texte filtré */
+.highlight {
+    background-color: #ffeaa7;
+    font-weight: bold;
+    border-radius: 3px;
+    padding: 0 2px;
+}
+
+/* Champ de recherche plus stylé */
+.search-input {
+    width: 100%;
+    padding: 12px 15px;
+    margin-bottom: 15px;
+    font-size: 16px;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+    transition: all 0.3s ease;
+}
+
+.search-input:focus {
+    outline: none;
+    border-color: #0d6efd;
+    box-shadow: 0 4px 12px rgba(13,110,253,0.3);
+}
+
+/* style btn delete et modifier */
+
+/* Colonne actions */
+.actions {
+    width: 90px; /* juste assez pour contenir les boutons */
+    white-space: nowrap; /* petit espace juste pour les boutons */
+    text-align: center;
+}
+
+/* Boutons actions tableau */
+.edit-btn, .delete-btn {
+     border: none;
+    padding: 6px 8px;
+    margin: 0 2px;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 14px;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+}
+
+/* Bouton modifier - vert */
+.edit-btn {
+    background-color: #ffc107; /* jaune/or */
+    color: white;
+}
+.edit-btn:hover {
+    background-color: #e0a800;
+}
+
+.delete-btn {
+    background-color: #dc3545; /* rouge */
+    color: white;
+}
+.delete-btn:hover {
+    background-color: #bb2d3b;
+}
+
+@media (max-width: 768px) {
+    .edit-btn, .delete-btn {
+        padding: 4px 6px;
+        font-size: 12px;
+    }
+}
+
+/* Icônes Font Awesome à l'intérieur des boutons */
+.edit-btn i, .delete-btn i {
+    pointer-events: none; /* évite de gêner le clic sur le bouton */
+}
+
+.delete-all-btn {
+    background: #dc3545;
+    color: white;
+    border: none;
+    padding: 8px 12px;
+    border-radius: 5px;
+    cursor: pointer;
+    margin-left: 15px;
+    font-size: 14px;
+    margin-bottom: 5px;
+}
+
+.delete-all-btn:hover {
+    background: #b02a37;
+}
+
+.delete-all-btn:disabled {
+    background: #ccc;
+    color: #666;
+    cursor: not-allowed;
+    opacity: 0.6;
+}
+
+/* hamburg*/
+.hamburger-btn {
+    display:none;
+    font-size:18px;
+    position:fixed;
+    top:10px;
+    left:10px;
+    padding:10px 15px;
+    background:#0d6efd;
+    color:white;
+    border:none;
+    border-radius:5px;
+    cursor:pointer;
+    z-index:1100;
+}
+
+
+/* Responsive */
+@media (max-width: 768px) {
+    .dashboard {
+        flex-direction: column;
+    }
+
+    .sidebar {
+        position: fixed;
+        top: 0;
+        left: -250px;
+        height: 100%;
+        z-index: 1000;
+    }
+
+    .sidebar.show {
+        left: 0;
+    }
+
+    .hamburger-btn {
+        display: block;
+    }
+
+    .main {
+        margin-left: 0;
+        padding: 20px;
+    }
+
+    .cards {
+        grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
+    }
+}
+
+
+
+
